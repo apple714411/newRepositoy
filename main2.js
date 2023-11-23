@@ -2,7 +2,7 @@ const comPic = document.querySelector(".comPic");
 const myPicR = document.querySelector(".myPicR");
 const myPicS = document.querySelector(".myPicS");
 const myPicP = document.querySelector(".myPicP");
-const forMain2 = document.querySelector(".forMain2");
+const resultUl = document.querySelector("ul");
 
 const RSP = ["묵", "찌", "빠"];
 const caseR = { 묵: "비겼다", 찌: "이겼다", 빠: "졌다" };
@@ -15,18 +15,24 @@ function randomPic() {
   return randomRSP;
 }
 
+function addLi(resultText1, resultText2) {
+  const resultLi = document.createElement("li");
+  resultLi.innerHTML = `${resultText1}</br>${resultText2}`;
+  resultUl.appendChild(resultLi);
+}
+
 function mainFunction(pic) {
   const randomRSP = randomPic();
   comPic.innerText = randomRSP;
   if (pic == "묵") {
     const result = caseR[randomRSP];
-    forMain2.innerText = `이번판은 ${result}!`;
+    addLi(`나:${pic} 퓨터:${randomRSP}`, `이번판은 ${result}!`);
   } else if (pic == "찌") {
     const result = caseS[randomRSP];
-    forMain2.innerText = `이번판은 ${result}!`;
+    addLi(`나:${pic} 퓨터:${randomRSP}`, `이번판은 ${result}!`);
   } else {
     const result = caseP[randomRSP];
-    forMain2.innerText = `이번판은 ${result}!`;
+    addLi(`나:${pic} 퓨터:${randomRSP}`, `이번판은 ${result}!`);
   }
 }
 
@@ -39,7 +45,3 @@ myPicS.addEventListener("click", function () {
 myPicP.addEventListener("click", function () {
   mainFunction("빠");
 });
-
-// 1. 메인함수로 내가 선택한 묵찌빠를 보낸다
-// 2. 랜덤RSP로 퓨터가 선택한 묵찌빠를 가져온다
-// 3. if문을 통해서 승패결과를 가른다
