@@ -1,54 +1,16 @@
-body {
+#weather {
   display: flex;
-}
-
-.comBox,
-.myBox,
-.resultBox {
-  display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  /* border: 1px solid black; */
+  margin-top: 150px;
 }
-
-.comBox :first-child,
-.myTitle,
-.resultBox div {
-  font-size: 30px;
-  background-color: rgb(70, 37, 255);
-  border-radius: 30px;
-  padding: 8px 20px;
-  margin: 30px 0px 5px 0px;
-  color: white;
-}
-
-.comPic,
-.myPic {
-  background-color: rgb(107, 107, 255);
-  height: 50px;
-  width: 50px;
+div div {
+  background-color: skyblue;
+  width: 300px;
+  height: 150px;
   margin: 10px;
-  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 15px;
-  transition: ease-in-out 0.1s;
-}
-.myBox :nth-child(2) {
-  display: flex;
-  /* flex-direction: column; */
-}
-.myPic {
-  cursor: pointer;
-}
-.myPic:hover {
-  scale: 1.1;
-  font-size: 20px;
-  background-color: rgb(0, 0, 0);
-}
-.myPic:active {
-  scale: 0.9;
 }
